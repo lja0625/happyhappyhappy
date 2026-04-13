@@ -3,47 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One in a Million - TWICE Fan Page</title>
+    <title>TWICE - One In A Million</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>TWICE</h1>
-        <p>One in a million!</p>
-    </header>
 
-    <nav>
-        <ul>
+    <nav class="navbar">
+        <div class="logo">TWICE FanPage</div>
+        <ul class="nav-links">
+            <li><a href="#home">首頁</a></li>
             <li><a href="#about">關於</a></li>
             <li><a href="#members">成員</a></li>
-            <li><a href="#discography">作品</a></li>
+            <li><a href="#music">熱門歌曲</a></li>
         </ul>
     </nav>
 
-    <main>
-        <section id="about">
-            <h2>關於 TWICE</h2>
-            <p>TWICE 是 JYP 娛樂旗下的九人女子團體，於 2015 年透過實境節目《SIXTEEN》出道。</p>
-        </section>
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>One In A Million!</h1>
+            <p>大家好，我們是 TWICE！</p>
+        </div>
+    </header>
 
-        <section id="members">
-            <h2>成員介紹</h2>
-            <div class="member-grid">
-                <div class="member-card">娜璉 Nayeon</div>
-                <div class="member-card">定延 Jeongyeon</div>
-                <div class="member-card">Momo</div>
-                <div class="member-card">Sana</div>
-                <div class="member-card">志效 Jihyo</div>
-                <div class="member-card">Mina</div>
-                <div class="member-card">多賢 Dahyun</div>
-                <div class="member-card">彩瑛 Chaeyoung</div>
-                <div class="member-card">子瑜 Tzuyu</div>
+    <section id="about" class="section">
+        <h2>關於 TWICE</h2>
+        <div class="content-box">
+            <p>TWICE 是 JYP 娛樂旗下的九人女子團體，於 2015 年 10 月 20 日憑藉首張迷你專輯《THE STORY BEGINS》正式出道。</p>
+            <p>團名「TWICE」寓意為「透過耳朵（音樂）獲得一次感動，再透過眼睛（表演）獲得第二次感動」。</p>
+        </div>
+    </section>
+
+    <section id="members" class="section bg-light">
+        <h2>成員介紹</h2>
+        <div class="grid-container">
+            <div class="card">
+                <div class="member-img">娜</div>
+                <h3>娜璉 Nayeon</h3>
+                <p>隊內職務：領唱、領舞</p>
             </div>
-        </section>
-    </main>
+            <div class="card">
+                <div class="member-img">定</div>
+                <h3>定延 Jeongyeon</h3>
+                <p>隊內職務：領唱</p>
+            </div>
+            <div class="card">
+                <div class="member-img">子</div>
+                <h3>子瑜 Tzuyu</h3>
+                <p>隊內職務：領舞、副唱、門面、忙內</p>
+            </div>
+            </div>
+    </section>
+
+    <section id="music" class="section">
+        <h2>經典歌曲</h2>
+        <table class="song-table">
+            <tr>
+                <th>年份</th>
+                <th>歌名</th>
+                <th>專輯類型</th>
+            </tr>
+            <tr>
+                <td>2015</td>
+                <td>Like OOH-AHH</td>
+                <td>出道迷你專輯</td>
+            </tr>
+            <tr>
+                <td>2016</td>
+                <td>CHEER UP</td>
+                <td>迷你二輯</td>
+            </tr>
+            <tr>
+                <td>2016</td>
+                <td>TT</td>
+                <td>迷你三輯</td>
+            </tr>
+        </table>
+    </section>
 
     <footer>
-        <p>&copy; 2026 TWICE Fan Project</p>
+        <p>Copyright &copy; 2026 TWICE Fan Project. Created for ONCE.</p>
     </footer>
+
 </body>
 </html>
