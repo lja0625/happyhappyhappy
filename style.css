@@ -1,9 +1,9 @@
-/* 全域設定 */
+/* 定義官方色 */
 :root {
-    --twice-apricot: #FFCCBB; /* 官方色：杏桃 */
-    --twice-magenta: #FF007F; /* 官方色：霓虹洋紅 */
-    --light-pink: #FFF0F5;
-    --dark-grey: #333;
+    --apricot: #FFCCBB;
+    --magenta: #FF007F;
+    --white: #ffffff;
+    --dark: #222;
 }
 
 * {
@@ -13,30 +13,29 @@
 }
 
 body {
-    font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
-    color: var(--dark-grey);
+    font-family: 'Noto Sans TC', sans-serif;
+    color: var(--dark);
     line-height: 1.6;
-    scroll-behavior: smooth;
     background-color: #fff;
 }
 
-/* 導覽列 */
+/* 導覽列：使用洋紅背景 */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: var(--magenta);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    color: var(--twice-magenta);
+    color: var(--white);
+    letter-spacing: 2px;
 }
 
 .nav-links {
@@ -44,28 +43,23 @@ body {
     display: flex;
 }
 
-.nav-links li {
-    margin-left: 25px;
-}
+.nav-links li { margin-left: 20px; }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--dark-grey);
+    color: var(--white);
     font-weight: bold;
     transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: var(--twice-magenta);
+    color: var(--apricot);
 }
 
-/* 英雄區塊 */
+/* 英雄區塊：杏桃與洋紅漸層 */
 .hero {
-    height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                url('https://images.unsplash.com/photo-1459749411177-042180ce673c?q=80&w=2070'); /* 暫用背景圖 */
-    background-size: cover;
-    background-position: center;
+    height: 50vh;
+    background: linear-gradient(135deg, var(--apricot) 30%, var(--magenta) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,108 +67,87 @@ body {
     text-align: center;
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-    margin-bottom: 10px;
-}
+.hero h1 { font-size: 4rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.2); }
 
-/* 區塊樣式 */
-.section {
-    padding: 80px 10%;
-    text-align: center;
-}
-
-.bg-light { background-color: var(--light-pink); }
+/* 區塊標題 */
+.section { padding: 60px 10%; text-align: center; }
 
 h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     margin-bottom: 40px;
-    position: relative;
+    color: var(--magenta);
+    border-bottom: 4px solid var(--apricot);
     display: inline-block;
 }
 
-h2::after {
-    content: '';
-    width: 50%;
-    height: 3px;
-    background: var(--twice-magenta);
-    position: absolute;
-    bottom: -10px;
-    left: 25%;
-}
+.bg-light { background-color: #fff5f2; }
 
-/* 內容框 */
-.content-box {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-}
-
-/* 成員網格 */
+/* 成員卡片設計 */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
 }
 
 .card {
     background: white;
-    padding: 30px 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid var(--apricot);
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(255, 0, 127, 0.2);
+    transform: scale(1.05);
+    border-color: var(--magenta);
+    box-shadow: 0 10px 20px rgba(255, 0, 127, 0.2);
 }
 
 .member-img {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--twice-apricot), var(--twice-magenta));
+    width: 70px;
+    height: 70px;
+    background: var(--magenta);
     border-radius: 50%;
     margin: 0 auto 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: white;
-    font-weight: bold;
 }
 
-/* 表格樣式優化 */
+/* 表格顏色強化 */
 .song-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 30px;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.song-table th, .song-table td {
-    padding: 18px;
-    border-bottom: 1px solid #eee;
+    margin-top: 20px;
+    border: 2px solid var(--magenta);
 }
 
 .song-table th {
-    background-color: var(--twice-apricot);
+    background-color: var(--magenta);
     color: white;
-    font-size: 1.1rem;
+    padding: 15px;
 }
 
-.song-table tr:hover {
-    background-color: #fff9f9;
+.song-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--apricot);
 }
 
-/* 頁尾 */
+.song-table tr:nth-child(even) { background-color: #fff9f7; }
+
+.song-link {
+    color: var(--magenta);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.song-link:hover { text-decoration: underline; }
+
 footer {
-    padding: 40px;
-    background: var(--dark-grey);
-    color: white;
+    padding: 30px;
+    background: var(--dark);
+    color: var(--white);
     text-align: center;
 }
