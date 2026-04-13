@@ -1,7 +1,8 @@
 /* 全域設定 */
 :root {
-    --twice-apricot: #FFCCBB; /* 杏桃色 */
-    --twice-magenta: #FF007F; /* 霓虹洋紅色 */
+    --twice-apricot: #FFCCBB; /* 官方色：杏桃 */
+    --twice-magenta: #FF007F; /* 官方色：霓虹洋紅 */
+    --light-pink: #FFF0F5;
     --dark-grey: #333;
 }
 
@@ -12,9 +13,11 @@
 }
 
 body {
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
     color: var(--dark-grey);
+    line-height: 1.6;
     scroll-behavior: smooth;
+    background-color: #fff;
 }
 
 /* 導覽列 */
@@ -30,6 +33,12 @@ body {
     z-index: 1000;
 }
 
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--twice-magenta);
+}
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -43,7 +52,7 @@ body {
     text-decoration: none;
     color: var(--dark-grey);
     font-weight: bold;
-    transition: color 0.3s;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
@@ -53,7 +62,8 @@ body {
 /* 英雄區塊 */
 .hero {
     height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://via.placeholder.com/1200x600'); /* 之後可換成團體照網址 */
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('https://images.unsplash.com/photo-1459749411177-042180ce673c?q=80&w=2070'); /* 暫用背景圖 */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -63,71 +73,107 @@ body {
     text-align: center;
 }
 
+.hero-content h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+}
+
 /* 區塊樣式 */
 .section {
-    padding: 60px 10%;
+    padding: 80px 10%;
     text-align: center;
 }
 
-.bg-light { background-color: #fcfcfc; }
+.bg-light { background-color: var(--light-pink); }
 
 h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: var(--twice-magenta);
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
 }
 
-/* 網格系統 (成員卡片) */
+h2::after {
+    content: '';
+    width: 50%;
+    height: 3px;
+    background: var(--twice-magenta);
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+}
+
+/* 內容框 */
+.content-box {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* 成員網格 */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    gap: 25px;
 }
 
 .card {
     background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 0, 127, 0.2);
 }
 
 .member-img {
-    width: 100px;
-    height: 100px;
-    background: var(--twice-apricot);
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--twice-apricot), var(--twice-magenta));
     border-radius: 50%;
     margin: 0 auto 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: white;
+    font-weight: bold;
 }
 
-/* 表格樣式 */
+/* 表格樣式優化 */
 .song-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 30px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .song-table th, .song-table td {
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
+    padding: 18px;
+    border-bottom: 1px solid #eee;
 }
 
 .song-table th {
     background-color: var(--twice-apricot);
     color: white;
+    font-size: 1.1rem;
 }
 
+.song-table tr:hover {
+    background-color: #fff9f9;
+}
+
+/* 頁尾 */
 footer {
-    padding: 20px;
+    padding: 40px;
     background: var(--dark-grey);
     color: white;
     text-align: center;
