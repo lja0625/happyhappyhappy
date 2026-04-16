@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TWICE - TT 深度解析與極限挑戰</title>
+    <title>TWICE - TT 深度專題與極限挑戰</title>
     <link rel="stylesheet" href="style.css">
     <style>
         /* 深藍與白色主題設定 */
         :root {
-            --deep-blue: #001f3f; /* 深藍色 */
+            --deep-blue: #001f3f; 
             --pure-white: #ffffff;
             --accent-blue: #0074D9;
         }
@@ -16,6 +16,7 @@
         body { 
             background-color: var(--pure-white); 
             color: var(--deep-blue);
+            font-family: 'Noto Sans TC', sans-serif;
         }
         
         .navbar { 
@@ -26,12 +27,12 @@
             color: var(--deep-blue); 
             border-bottom: 4px solid var(--deep-blue);
             padding-bottom: 10px;
+            margin-top: 40px;
         }
 
         .tt-image {
             width: 100%;
             max-width: 900px;
-            border-radius: 0; /* 配合深藍風格改為俐落直角 */
             box-shadow: 0 15px 30px rgba(0,0,0,0.3);
             margin: 0 auto 40px;
             display: block;
@@ -48,15 +49,43 @@
 
         /* 歌詞區塊 */
         .lyrics-container {
-            background: #f4f4f4;
+            background: #f8f9fa;
             padding: 30px;
             border-radius: 10px;
-            height: 300px;
+            height: 400px;
             overflow-y: scroll;
-            line-height: 2;
+            line-height: 2.5;
             text-align: center;
-            border: 1px solid var(--deep-blue);
+            border: 2px solid var(--deep-blue);
             margin-bottom: 40px;
+        }
+
+        /* 影片區塊 */
+        .video-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .video-item {
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 比例 */
+            height: 0;
+            margin-top: 15px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
         }
 
         /* 遊戲區域 */
@@ -67,7 +96,7 @@
             position: relative;
             overflow: hidden;
             border-radius: 15px;
-            cursor: crosshair;
+            cursor: pointer;
         }
 
         #target-logo {
@@ -76,7 +105,7 @@
             position: absolute;
             display: none;
             cursor: pointer;
-            filter: drop-shadow(0 0 10px white); /* 增加發光感 */
+            filter: drop-shadow(0 0 10px white);
         }
 
         #score-board {
@@ -93,20 +122,19 @@
             border: none;
             font-size: 1.2rem;
             cursor: pointer;
-            transition: 0.3s;
+            border-radius: 5px;
+            margin-bottom: 20px;
         }
 
-        .btn-start:hover {
-            background: var(--accent-blue);
-        }
+        .btn-start:hover { background: var(--accent-blue); }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">TWICE - TT SPECIAL</div>
+        <div class="logo" style="color: white;">TWICE - TT</div>
         <ul class="nav-links">
-            <li><a href="index.html">BACK TO HOME</a></li>
+            <li><a href="index.html" style="color: white;">BACK TO HOME</a></li>
         </ul>
     </nav>
 
@@ -122,22 +150,337 @@
         <h2>完整歌詞</h2>
         <div class="lyrics-container">
             <p>
-                [Intro]<br>
                 이러지도 못하는데 저러지도 못하네<br>
-                나나나나나나나~<br><br>
-                [Verse 1]<br>
-                매일 울리는 벨벨벨 (Bell bell bell)<br>
-                이젠 나를 배려해줘<br>
-                배터리 낭비하기 싫어<br>
-                자꾸만 봐 자꾸 자꾸만 봐<br>
-                보고 싶어도 (Oh!)<br><br>
-                [Chorus]<br>
-                I'm like TT, Just like TT<br>
-                이런 내 맘 모르고 너무해 너무해<br>
-                I'm like TT, Just like TT<br>
-                Tell me that you'd be my baby...<br>
-                (此處為簡略示範，你可以將完整歌詞填入此區塊)
+                [娜璉 Nayeon]
+                이러지도 못하는데
+                這個做不到
+
+                저러지도 못하네
+                那個也做不到
+
+                ((  ba ba ba baby ))
+                그저 바라보며 Ba-ba-ba-baby
+                只能乾瞪眼 Ba-ba-ba-baby
+
+                [MINA]
+                매일 상상만 해 이름과 함께
+                每天都只能想像
+
+                쓱 말을 놨네 Baby
+                隨口叫了你的名字 Baby
+
+                아직 우린 모르는 사인데
+                雖然我們互不相識
+
+                [子瑜 Tzuyu]
+                아무거나 걸쳐도 아름다워
+                不管穿什麼都美麗
+
+                (( dawo ))
+                (( 다워 ))
+
+                [MINA]
+                거울 속 단 둘이서 하는
+                鏡子裡只有我們兩人的
+
+                (( show show ))
+                Fashion show show
+                時尚秀
+
+                [志效 Jihyo]
+                (( kkokkkok )) (( talk talk ))
+                이번엔 정말 꼭꼭 내가 먼저 Talk talk
+                這次我一定一定要先 Talk talk
+
+                [子瑜 Tzuyu]
+                다짐 뿐인 걸 매번 다짐 뿐인 걸
+                下定決心，每次都要下定決心
+
+ 
+
+                [SANA]
+                (( na na na na na na na ))
+                Na Na Na Na Na Na Na
+
+                콧노래가 나오다가 나도 몰래
+                我開始哼唱著歌，不知不覺中
+
+                [MOMO]
+                (( gatae ))
+                눈물 날 것 같애
+                好像要流淚了
+                (( gatae ))
+                아닌 것 같애
+                我好像不是我了
+
+                (( gatae ))
+                내가 아닌 것 같애
+                不像是我了
+
+                [ALL]
+                (( i love you so much ))
+                I love you so much
+                我真的很愛你
+
+ 
+
+                [娜璉 Nayeon]
+                이미 난 다 컸다고 생각하는데
+                我以為我已經長大了
+
+                (( ppang ))
+                (( 빵! ))
+                (( 砰！ )) -- 配合編舞的開槍手勢
+
+                어쩌면 내 맘인데 왜
+                但我的心為什麼不能
+
+                내 맘대로 할 수 없는 건데
+                不能任我左右
+
+                [志效 Jihyo]
+                밀어내려고 하면 할수록
+                我越是想推開你
+
+                (( jakku kkeulryo wae jakku jakku kkeulryo baby ))
+                자꾸 끌려 왜 자꾸 자꾸 끌려 Baby
+                就越是被你吸引，一直被你吸引 Baby
+
+                [ALL]
+                (( t t ))
+                I'm like TT
+
+                (( t t ))
+                Just like TT
+
+                [多賢 Dahyun]
+                (( nomuhae nomuhae ))
+                이런 내 맘 모르고 너무해 너무해
+                你不了解我的心，太過分，太過分
+
+                [ALL]
+                (( t t ))
+                I'm like TT
+
+                (( t t ))
+                Just like TT
+
+                [志效 Jihyo]
+                Tell me that you'd be my baby
+                告訴我你會成為我的寶貝
+
+ 
+
+                (( 歡呼 ))
+
+                [定延 Jeongyeon]
+                어처구니 없다고 해 얼굴 값을 못한대
+                說我太可笑，辜負了我的顏值
+
+                (( ba ba ba baby ))
+                전혀 위로 안돼 Ba-ba-ba-baby
+                完全沒有安慰到我 Ba-ba-ba-baby
+
+                [志效 Jihyo]
+                미칠 것 같애 이 와중에 왜 배는 또 고픈 건데
+                我快被搞瘋 為什麼在混亂中會覺得餓
+
+                하루 종일 먹기만 하는데
+                整天都在吃卻一直吃不飽
+
+                [彩瑛 Chaeyoung]
+                (( maemmaemaemae )) (( ttaejji ))
+                맴매매매 아무 죄도 없는 인형만 때찌
+                打打打，打著無辜的玩偶
+
+                [多賢 Dahyun]
+                (( hwekwekwek ))
+                종일 앉아있다가 엎드렸다 시간이 획획획
+                整天就坐著趴著，時光都飛飛飛逝
+
+                [彩瑛 Chaeyoung]
+                (( chikchik ))
+                피부는 왜 이렇게 또 칙칙
+                膚色怎麼這麼暗沉
+
+                [多賢 Dahyun]
+                (( sipjji ))
+                자꾸 틱틱 거리고 만 싶지
+                只想著要繼續抱怨
+
+                [彩瑛 Chaeyoung / 多賢 Dahyun]
+                (( waewaewaewaewae ))
+                엄만 귀찮게 계속 왜왜왜왜왜
+                媽媽又一直在嘮叨，為為為什麼？
+
+ 
+
+                [SANA]
+                (( na na na na na na na ))
+                Na Na Na Na Na Na Na
+
+                콧노래가 나오다가 나도 몰래
+                我開始哼唱著歌，不知不覺中
+
+                [MOMO]
+                (( gatae ))
+                짜증날 것 같애
+                覺得很煩
+
+                (( gatae ))
+                화날 것 같애
+                覺得很生氣
+
+                이런 애가 아닌데
+                我不是這樣的人
+
+                [ALL]
+                (( i love you so much ))
+                I love you so much
+                我真的很愛你
+
+ 
+
+                [娜璉 Nayeon]
+                이미 난 다 컸다고 생각하는데
+                我以為我已經長大了
+
+                (( ppang ))
+                (( 빵! ))
+                (( 砰！ ))
+
+                어쩌면 내 맘인데 왜
+                但我的心為什麼不能
+
+                내 맘대로 할 수 없는 건데
+                不能任我左右
+
+                [志效 Jihyo]
+                밀어내려고 하면 할수록
+                我越是想推開你
+
+                (( jakku kkeulryo wae jakku jakku kkeulryo baby ))
+                자꾸 끌려 왜 자꾸 자꾸 끌려 Baby
+                就越是被你吸引，一直被你吸引 Baby
+                
+                [ALL]
+                (( t t ))
+                I'm like TT
+
+                (( t t ))
+                Just like TT
+
+                [多賢 Dahyun]
+                (( nomuhae nomuhae ))
+                이런 내 맘 모르고 너무해 너무해
+                你不了解我的心，太過分，太過分
+
+                [ALL]
+                ㄒ(( t t ))
+                I'm like TT
+
+                (( Ah~ ))
+
+                (( t t ))
+                Just like TT
+
+                (( Ah~ ))
+
+                [志效 Jihyo]
+                Tell me that you'd be my baby
+                告訴我你會成為我的寶貝
+
+ 
+
+                (( 歡呼 ))
+
+                [子瑜 Tzuyu]
+                혹시 이런 나를 알까요
+                也許你了解這樣的我
+
+                [MINA]
+                이대로 사라져 버리면 안돼요
+                不能就這樣消失地無影無蹤
+
+                [志效 Jihyo]
+                (( kkokkkok )) (( talk talk ))
+                이번엔 정말 꼭꼭 내가 먼저 Talk talk
+                這次我一定一定要先 Talk talk
+
+                다짐 뿐인 걸 매번 다짐 뿐인 걸
+                下定決心，每次都要下定決心
+
+ 
+
+                (( 歡呼 ))
+
+                [MINA]
+                이미 난 다 컸다고 생각하는데
+                我以為我已經長大了
+
+                어쩌면 내 맘인데 왜
+                但我的心為什麼不能
+
+                내 맘대로 할 수 없는 건데
+                不能任我左右
+
+                [定延 Jeongyeon]
+                밀어내려고 하면 할수록
+                我越是想推開你
+
+                (( jakku kkeulryo wae jakku jakku kkeulryo baby ))
+                자꾸 끌려 왜 자꾸 자꾸 끌려 Baby
+                就越是被你吸引，一直被你吸引 Baby
+
+                [ALL]
+                (( t t ))
+                I'm like TT
+
+                (( t t ))
+                Just like TT
+
+                [多賢 Dahyun]
+                (( nomuhae nomuhae ))
+                이런 내 맘 모르고 너무해 너무해
+                你不了解我的心，太過分，太過分
+
+                [ALL]
+                (( t t ))
+                I'm like TT
+
+                (( Ah~ ))
+
+                (( t t ))
+                Just like TT
+
+                (( Ah~ ))
+
+                [志效 Jihyo]
+                Tell me that you'd be my baby
+                告訴我你會成為我的寶貝
             </p>
+        </div>
+
+        <h2>相關影片連結</h2>
+        <div class="video-grid">
+            <div class="video-item">
+                <h3>MV 版</h3>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/ePpPVE-GGJw" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="video-item">
+                <h3>打歌舞台版 (Music Bank)</h3>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/0kFysgVv9ZQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="video-item">
+                <h3>舞蹈版 (Choreography)</h3>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/9uypQGzzhns" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
         </div>
 
         <hr>
@@ -168,25 +511,20 @@
 
         function showLogo() {
             if (count >= 5) {
-                alert("YOU WIN! 恭喜達成五分！🎉");
+                alert("YOU WIN! 🎉");
                 logo.style.display = 'none';
                 return;
             }
-
-            // 計算隨機位置
             const x = Math.floor(Math.random() * (area.clientWidth - 70));
             const y = Math.floor(Math.random() * (area.clientHeight - 70));
-
             logo.style.left = x + 'px';
             logo.style.top = y + 'px';
             logo.style.display = 'block';
 
-            // 嚴格的 1 秒限制
             clearTimeout(timer);
             timer = setTimeout(() => {
                 logo.style.display = 'none';
-                // 消失後稍微停頓再顯示下一個
-                setTimeout(showLogo, 500); 
+                setTimeout(showLogo, 400); 
             }, 1000); 
         }
 
@@ -194,18 +532,17 @@
             count++;
             scoreBoard.innerText = count;
             logo.style.display = 'none';
-            clearTimeout(timer); // 點到了就清除計時器
-            
+            clearTimeout(timer);
             if (count < 5) {
-                setTimeout(showLogo, 300); // 點中後快速換下一個
+                setTimeout(showLogo, 200);
             } else {
                 alert("YOU WIN! 🎉");
             }
         }
     </script>
 
-    <footer>
-        <p>Copyright &copy; 2026 TWICE Fan Project - Deep Blue Version</p>
+    <footer style="background: var(--deep-blue); color: white; padding: 20px; text-align: center;">
+        <p>Copyright &copy; 2026 TWICE Fan Project</p>
     </footer>
 </body>
 </html>
